@@ -7,7 +7,7 @@ read FILENAME
 
 print_instruction "2. Move the file to the following path: /home/$USER/Documents/$FILENAME"
 
-echo "Press any key when you're done..."
+echo -n "Press any key when you're done..."
 enter_to_continue
 
 PATH="/home/$USER/Documents/$FILENAME"
