@@ -13,8 +13,15 @@ enter_to_continue
 PATH="/home/$USER/Documents/$FILENAME"
 ZSHRC="/home/$USER/.zshrc"
 
-echo "# Custom KeePassXC Alias" >> $ZSHRC
-echo "alias xcusp=\"keepassxc-cli clip $PATH USP\"" >> $ZSHRC
-echo "alias xcgithub=\"keepassxc-cli clip $PATH GitHub\"" >> $ZSHRC
+declare -A ALIASES=(
+    ["xcusp"]="USP"
+    ["xcgithub"]="GitHub"
+)
 
-# TODO Add more aliases if needed
+echo "# Custom KeePassXC Alias" >> $ZSHRC
+
+for ALIAS in "${!ALIASES[@]}"
+do 
+    echo "alias $ALIAS=\"keepassxc-cli clip $PATH ${ALIASES[$ALIAS]}\"" >> $ZSHRC
+    print_success "Created alias '$ALIAS' for ${ALIASES[$ALIAS]} password."
+done
