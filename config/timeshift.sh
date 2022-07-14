@@ -1,6 +1,6 @@
 source ./global.sh
 
-print_info "Set up snapshot options on GUI. Close the window when you're done."
+print_instruction "Set up snapshot options on GUI. Close the window when you're done."
 
 # Open GUI to set up snapshot options
 sudo timeshift-gtk

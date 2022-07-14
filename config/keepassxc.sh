@@ -2,12 +2,12 @@ source ./global.sh
 
 print_info "Follow the instructions below to set up the database"
 
-echo -n "Enter the database file name: "
+print_instruction "1. Enter the database file name: " -n
 read FILENAME
 
-print_info "Move the file to the following path: /home/$USER/Documents/$FILENAME"
+print_instruction "2. Move the file to the following path: /home/$USER/Documents/$FILENAME"
 
-echo "When you're done, press any key to continue..."
+echo "Press any key when you're done..."
 enter_to_continue
 
 PATH="/home/$USER/Documents/$FILENAME"
